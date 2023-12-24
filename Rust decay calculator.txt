@@ -1,0 +1,42 @@
+function Decay(){
+
+    var material = prompt('enter material: ');
+    var hp = prompt('enter hp: ');
+
+    hp = parseFloat(hp);
+
+    var minutes;
+
+    if(hp > 2000)
+    {
+        console.log('Please enter a HP value less than 2000')
+    }
+
+    if(material === 'wood')
+    {
+        var minutes = Math.round(hp * 0.72);
+
+    }
+    else if(material === 'stone')
+    {
+        var minutes = Math.round(hp * 0.6);
+
+    }
+    else if(material === 'metal')
+    {
+        var minutes = Math.round(hp * 0.48);
+    }
+    else if(material === 'armored' || material === 'armoured')
+    {
+        var minutes = Math.round(hp * 0.36 );
+    }
+    else
+    {
+        console.log('Not recognized, please ensure you have entered either \'wood\', \'stone\', \'metal\' or \'armored\' ')
+    }
+
+    console.log(`It will decay in ${minutes} minutes`)
+    return;
+}
+
+Decay();
